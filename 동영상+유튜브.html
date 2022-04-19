@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 + 유튜브</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .main_visual {
+            height: 800px;
+        }
+
+        .main_visual video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 유튜브포함 레이아웃 */
+        .cont {
+            width: 1280px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* 양끝에 붙여서 정렬
+            높이를 수직가운데 배치할 수 있도록 작성
+            */
+        }
+
+        .cont .cont_left {
+            width: 50%;
+            background-color: antiquewhite;
+        }
+
+        .cont .cont_left .youtube {
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 화면 비율 */
+
+            position: relative;
+        }
+
+        .cont .cont_left .youtube iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .cont .info {
+            width: 45%;
+            /* background-color: aquamarine; */
+        }
+
+        .cont .info h4 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        /* .cont .info p태그 중에서 두번째 p태그에게
+        외부여백을 위로 20px, 아래로 40px */
+        .cont .info p:nth-of-type(2) {
+            /* 외부여백을 위로 20px, 
+            아래로 40px  */
+            margin: 20px 0 40px;
+        }
+
+        .cont .info dl {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .cont .info dl dt {
+            /* 가로 : 100px
+            글자두께 : 두껍게 */
+            width: 100px;
+            font-weight: bold;
+        }
+
+
+        .cont .info ul {
+            /* background-color: antiquewhite; */
+        }
+
+        .cont .info ul::after {
+            content: '';
+            display: block;
+            clear: both;
+            /* float해제시키기 */
+        }
+
+        .cont .info ul li {
+            float: left;
+            height: 45px;
+            border: 1px solid #333;
+            margin-right: 10px;
+            line-height: 45px;
+            width: 120px;
+            text-align: center;
+            /* 높이 : 45px
+            테두리 : 1px 직선 색상
+            외부여백 오른쪽으로 10px 
+            글자 수직가운데 정렬
+            테두리 포함해서 높이 맞추기
+            가로 : 120px
+            글자 수평 가운데 정렬
+            */
+
+        }
+
+        /* .cont .info ul li중에서 첫번째 li한테
+        그라데이션 적용하기 copy css클릭 후 붙여넣기*/
+        .cont .info ul li:nth-child(1) {
+            background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            border: 1px solid #f093fb;
+        }
+
+        .cont .info ul li:nth-child(1) a {
+            color: #fff;
+        }
+
+        /*   .cont .info ul li중에서 첫번째 li한테안에 있는 
+        a태그에게 글자색상 적용하기 */
+    </style>
+</head>
+
+<body>
+    <section class="main_visual">
+        <!-- autoplay : 자동재생
+              muted : 음소거
+              loop : 반복재생
+            자동재생을 위해 음소거 함께 사용 -->
+        <video autoplay muted loop>
+            <source src="images/Trees - 93826.mp4" type="video/mp4" />
+        </video>
+    </section><!-- .main_visual end -->
+
+    <section class="cont">
+        <div class="cont_left">
+            <div class="youtube">
+                <!-- 유튜브 연결 -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tbLO_Bhjhuw"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div><!-- .youtube end -->
+        </div><!-- .cont_left -->
+
+        <div class="info">
+            <strong>#여행</strong>
+            <h4>제주 동부 추천스팟 70곳 총정리</h4>
+            <p>편집, 촬영, 연출, 디자인, 특수효과</p>
+            <p>제작목적, 콘셉트 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, reprehenderit dolorum. </p>
+            <dl>
+                <dt>프로그램</dt>
+                <dd>일러스트레이터, 포토샵, 프리미어프로</dd>
+            </dl>
+            <dl>
+                <dt>러닝타임</dt>
+                <dd>00:11:35</dd>
+            </dl>
+            <ul>
+                <li><a href="#">유튜브이동</a></li>
+                <li><a href="#">기획서보기</a></li>
+            </ul>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero iste quaerat autem adipisci
+                perferendis
+                deleniti impedit, dolor tempore ut enim. Fugit perferendis vel, est praesentium distinctio voluptatem
+                quasi
+                ducimus.</p> -->
+        </div><!-- .info end -->
+    </section><!-- .cont end -->
+
+
+</body>
+
+</html>
